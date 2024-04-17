@@ -170,7 +170,7 @@ const Settings = ({ navigation }) => {
                   color="blue"
                   style={{ marginRight: 10 }}
                 />
-                <Text marginLeft={10}>SignOut</Text>
+                <Text marginLeft={10}>Sign Out</Text>
               </HStack>
             </Pressable>
           </Box>

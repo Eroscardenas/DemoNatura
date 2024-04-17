@@ -103,6 +103,15 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlignVertical: "center",
   },
+  playlist: {
+    fontSize: 15,
+    textAlignVertical: "center",
+    margin: 15,
+    marginRight: 20,
+    paddingBottom: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "black",
+  },
 });
 
 export default styles;
