@@ -1,13 +1,35 @@
-import React from "react";
-import styles from "../../../styles";
 import { View, Text, TouchableOpacity } from "react-native";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AroundScreen from "./AroundScreen";
 import HomeIndex from "./HomeIndex";
-import Process from "./ProcessScreen";
+import Presets from "./PresetNavigation/PresetScreen";
+import SetPreset from "./PresetNavigation/SetPreset";
+
+const Tab = createMaterialTopTabNavigator();
+const Stack = createNativeStackNavigator();
+
+function PresetStack () {
+  return (
+    <Stack.Navigator initialRouteName="Presets">
+      <Stack.Screen
+        name="Presets"
+        component={Presets}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="SetPreset"
+        component={SetPreset}
+        options={{headerShown: false
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 
 const HomeScreen = ({ navigation }) => {
-  const Tab = createMaterialTopTabNavigator();
   return (
     <Tab.Navigator
       initialRouteName="home"
@@ -27,7 +49,7 @@ const HomeScreen = ({ navigation }) => {
     >
       <Tab.Screen name="around" component={AroundScreen} />
       <Tab.Screen name="home" component={HomeIndex} />
-      <Tab.Screen name="process" component={Process} />
+      <Tab.Screen name="presets" component={PresetStack} />
     </Tab.Navigator>
   );
 };

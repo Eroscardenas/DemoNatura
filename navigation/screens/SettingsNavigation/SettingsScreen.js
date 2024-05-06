@@ -1,7 +1,7 @@
 import { View, Text, Pressable, Alert } from "react-native";
 import React, { useState } from "react";
-import styles from "../../styles";
-import app from "../../firebase-config";
+import styles from "../../../styles";
+import app from "../../../firebase-config";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { HStack, Box, VStack, Avatar } from "@gluestack-ui/themed";
 import {

@@ -22,6 +22,7 @@ export default function MusicNavigation() {
       <Stack.Screen
         name="Playlist"
         component={PlaylistScreen}
+        options={{ headerStyle: { backgroundColor: "#E0F3E0"}}}
       />
       <Stack.Screen 
         name="Artists" 

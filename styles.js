@@ -112,6 +112,25 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "black",
   },
-});
+  graphtlt: {
+    textAlign:'center',
+    fontWeight:'bold',
+    fontSize:20,
+  },
+  presetbox: {
+    backgroundColor: "green",
+    margin: 10,
+    width: 165,
+    height: 200,
+    borderRadius: 10,
+  },
+  prboxtext: {
+    fontSize: 20,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "white",
+  },
+  }
+);
 
 export default styles;

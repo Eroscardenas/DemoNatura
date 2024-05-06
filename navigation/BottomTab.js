@@ -5,7 +5,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 
 //Screens
 import HomeScreen from "./screens/HomeNavigation/HomeScreen";
-import Settings from "./screens/SettingsScreen";
+import Settings from "./screens/SettingsNavigation/SettingsScreen.js";
 import MusicNavigation from "./screens/MusicNavigation/MusicNavigation";
 import AddDevice from "./screens/DevicesScreen/AddDeviceScreen";
 import ConnectedDevices from "./screens/DevicesScreen/ConnectedDevicesScreen";
@@ -102,3 +102,4 @@ function DevicesStack() {
     </Stack.Navigator>
   );
 }
+

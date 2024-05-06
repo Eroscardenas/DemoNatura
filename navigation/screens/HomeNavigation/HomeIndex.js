@@ -1,5 +1,6 @@
 import { View, Text, ScrollView, Dimensions, Pressable } from "react-native";
 import React from "react";
+import styles from "../../../styles";
 import {
   Button,
   ButtonText,
@@ -33,10 +34,10 @@ const HomeIndex = () => {
     ],
   };
   const dataLines = {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["January", "February", "March", "April", "May", "June", "July"],
     datasets: [
       {
-        data: [20, 45, 28, 80, 99, 43],
+        data: [20, 45, 28, 80, 99, 43, 50],
         color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`, // optional
         strokeWidth: 2, // optional
       },
@@ -44,12 +45,12 @@ const HomeIndex = () => {
     legend: ["Rainy Days"], // optional
   };
   const chartConfig = {
-    backgroundColor: "#2B943E",
-    backgroundGradientFrom: "#2B943E",
-    backgroundGradientTo: "#2B943E",
+    backgroundColor: "#88D852",
+    backgroundGradientFrom: "#7BE776",
+    backgroundGradientTo: "#88D852",
     decimalPlaces: 2,
     color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-    labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
+    labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
     style: {
       borderRadius: 16,
     },
@@ -60,11 +61,15 @@ const HomeIndex = () => {
     },
   };
 
+  const barSpace = 50;
+  const chartWidth = dataBars.labels.length * barSpace;
+
+
   const screenWidth = Dimensions.get("window").width;
   return (
-    <ScrollView style={{ margin: 5 }} contentContainerStyle={{ flexGrow: 1 }}>
-      <VStack>
-        <Center padding={30}>
+    <ScrollView style={{ margin: 10 }} contentContainerStyle={{ flexGrow: 1 }}>
+      <VStack>  
+        <Center>
           <MaterialCommunityIcons name="pine-tree" size={50} color="black" />
           <Button bg="green" borderRadius={5} marginTop={20}>
             <ButtonText>Actual status</ButtonText>
@@ -81,7 +86,7 @@ const HomeIndex = () => {
         <HStack padding={10} mx={30} justifyContent="space-between">
           <VStack>
             <FontAwesome5 name="temperature-high" size={24} color="black" />
-            <Text style={{ textAlign: "center" }}>0</Text>
+            <Text >0</Text>
           </VStack>
           <VStack>
             <Feather name="sun" size={24} color="black" />
@@ -97,25 +102,39 @@ const HomeIndex = () => {
           </VStack>
         </HStack>
         <VStack>
-          <View style={{marginRight:30}}>
-            <BarChart
-              style={{
-                marginVertical: 8,
-                borderRadius: 20,
-              }}
-              data={dataBars}
-              width={screenWidth}
-              height={245}
-              chartConfig={chartConfig}
-              verticalLabelRotation={30}
-            />
+          <View style={{marginTop:10}}>
+            <Text style={styles.graphtlt}>Frecuencia de Riego</Text>
+            <ScrollView 
+              horizontal={true}
+              >
+                <BarChart
+                  style={{
+                    marginVertical: 8,
+                    borderRadius: 20,
+                  }}
+                  data={dataBars}
+                  width={screenWidth}
+                  height={270}
+                  chartConfig={chartConfig}
+                  verticalLabelRotation={30}
+                  />
+              </ScrollView>
           </View>
-          <LineChart
-            data={dataLines}
-            width={screenWidth}
-            height={220}
-            chartConfig={chartConfig}
-          />
+          <View>
+            <Text style={styles.graphtlt}>Humedad</Text>
+            <ScrollView horizontal>
+            <LineChart
+                style={{
+                  marginVertical: 8,
+                  borderRadius: 20,
+                }}
+                data={dataLines}
+                width={screenWidth}
+                height={220}
+                chartConfig={chartConfig}
+              />
+            </ScrollView>
+          </View>
         </VStack>
       </VStack>
     </ScrollView>
