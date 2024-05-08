@@ -86,19 +86,15 @@ const HomeIndex = () => {
         <HStack padding={10} mx={30} justifyContent="space-between">
           <VStack>
             <FontAwesome5 name="temperature-high" size={24} color="black" />
-            <Text >0</Text>
+            <Text >22</Text>
           </VStack>
           <VStack>
             <Feather name="sun" size={24} color="black" />
-            <Text>0</Text>
+            <Text>75</Text>
           </VStack>
           <VStack>
             <Entypo name="drop" size={24} color="black" />
-            <Text>0</Text>
-          </VStack>
-          <VStack>
-            <FontAwesome name="heartbeat" size={24} color="black" />
-            <Text>0</Text>
+            <Text>35</Text>
           </VStack>
         </HStack>
         <VStack>
