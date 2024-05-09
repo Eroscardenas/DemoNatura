@@ -18,7 +18,7 @@ const Settings = ({ navigation }) => {
   const auth = getAuth(app);
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      setUserAuth(user.email);
+      setUserAuth(user.email);  
       console.log(user);
     } else {
       console.log("Ha cerrado inicio de sesion");

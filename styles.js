@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 30,
-    color: "#055A87",
     marginBottom: 30,
     textAlign: "center",
     fontWeight: "bold",
@@ -28,6 +27,14 @@ const styles = StyleSheet.create({
     marginTop: 3,
     marginBottom: 1,
     textAlign: "center",
+  },
+  inputpr: {
+    borderWidth: 2,
+    borderColor: "#049200",
+    borderRadius: 7,
+    padding: 7,
+    marginTop: 6,
+    width: 100,
   },
   input: {
     borderWidth: 2,
