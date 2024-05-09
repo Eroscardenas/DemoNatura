@@ -3,6 +3,7 @@ import { View, Text, TextInput } from "react-native";
 import { Button, Box, ScrollView, VStack, HStack } from "@gluestack-ui/themed";
 import { useNavigation } from "@react-navigation/native";
 import styles from "../../../../styles";
+import { Feather } from '@expo/vector-icons';
 
 export default function SetPreset() {
     const navigation = useNavigation();
@@ -26,6 +27,7 @@ export default function SetPreset() {
                             keyboardType="numeric"
                             placeholder="0"
                         />
+                        <Feather name="help-circle" size={24} color="black" />
                     </HStack>
                     <HStack style={{margin:18}}>
                         <Text style={{fontSize:18,fontWeight:'bold',marginRight:10,paddingTop:10}}>Humidity:</Text>
