@@ -59,20 +59,22 @@ const Settings = ({ navigation }) => {
         <VStack space="3xl" reversed={false}>
           <HStack space="sm" reversed={false}>
             <Avatar bgColor="#2B943E" size="md" borderRadius="$full" />
-            <Text
-              style={[
-                styles.title,
-                { color: "black" },
-                { marginTop: 5 },
-                { marginBottom: 0 },
-                { textAlign: "left" },
-              ]}
-            >
-              Account
-            </Text>
+            <Pressable onPress={() => navigation.navigate("Account")}>
+              <Text
+                style={[
+                  styles.title,
+                  { color: "black" },
+                  { marginTop: 5 },
+                  { marginBottom: 0 },
+                  { textAlign: "left" },
+                ]}
+              >
+                Account
+              </Text>
+            </Pressable>
           </HStack>
           <Box style={{ borderBottomWidth: 3 }}>
-            <Pressable>
+            <Pressable onPress={() => navigation.navigate("Notifications")}>
               <HStack
                 style={{
                   padding: 10,
@@ -88,7 +90,7 @@ const Settings = ({ navigation }) => {
             </Pressable>
           </Box>
           <Box style={{ borderBottomWidth: 3 }}>
-            <Pressable>
+            <Pressable onPress={() => navigation.navigate("Apperance")}>
               <HStack
                 style={{
                   padding: 10,
@@ -102,7 +104,7 @@ const Settings = ({ navigation }) => {
             </Pressable>
           </Box>
           <Box style={{ borderBottomWidth: 3 }}>
-            <Pressable>
+            <Pressable onPress={() => navigation.navigate("PrivacySupport")}>
               <HStack
                 style={{
                   padding: 10,
@@ -116,7 +118,7 @@ const Settings = ({ navigation }) => {
             </Pressable>
           </Box>
           <Box style={{ borderBottomWidth: 3 }}>
-            <Pressable>
+            <Pressable onPress={() => navigation.navigate("HistorialGraficas")}>
               <HStack
                 style={{
                   padding: 10,
@@ -130,7 +132,7 @@ const Settings = ({ navigation }) => {
             </Pressable>
           </Box>
           <Box style={{ borderBottomWidth: 3 }}>
-            <Pressable>
+            <Pressable onPress={() => navigation.navigate("HelpSupport")}>
               <HStack
                 style={{
                   padding: 10,
@@ -144,7 +146,7 @@ const Settings = ({ navigation }) => {
             </Pressable>
           </Box>
           <Box style={{ borderBottomWidth: 3 }}>
-            <Pressable>
+            <Pressable onPress={() => navigation.navigate("AboutUs")}>
               <HStack
                 style={{
                   padding: 10,

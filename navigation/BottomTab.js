@@ -10,6 +10,7 @@ import MusicNavigation from "./screens/MusicNavigation/MusicNavigation";
 import AddDevice from "./screens/DevicesScreen/AddDeviceScreen";
 import ConnectedDevices from "./screens/DevicesScreen/ConnectedDevicesScreen";
 import AddDeviceInfo from "./screens/DevicesScreen/AddDeviceInfo.js";
+import NavigationSettings from "./screens/SettingsNavigation/Settings/NavigationSettings.js";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -63,7 +64,7 @@ export default function BottomTab() {
       />
       <Tab.Screen
         name="Settings"
-        component={Settings}
+        component={NavigationSettings}
         options={{
           headerStyle: { backgroundColor: "#00320E" },
           headerTintColor: "white",
@@ -102,4 +103,3 @@ function DevicesStack() {
     </Stack.Navigator>
   );
 }
-
