@@ -26,23 +26,23 @@ const Presets = () => {
           <Button style={styles.presetbox} onPress={handlePress}>
             <Text style={styles.prboxtext}>Interior</Text>
           </Button>
-          <Button style={styles.presetbox}>
+          <Button style={styles.presetbox} onPress={handlePress}>
           <Text style={styles.prboxtext}>Exterior</Text>
           </Button>
         </HStack>
         <HStack>
-        <Button style={styles.presetbox}>
+        <Button style={styles.presetbox} onPress={handlePress}>
           <Text style={styles.prboxtext}>Shadow</Text>
         </Button>
-        <Button style={styles.presetbox}>
+        <Button style={styles.presetbox} onPress={handlePress}>
           <Text style={styles.prboxtext}>Full Sun</Text>
         </Button>
         </HStack>
         <HStack>
-        <Button style={styles.presetbox}>
+        <Button style={styles.presetbox} onPress={handlePress}>
           <Text style={styles.prboxtext}>Suculentas</Text>
         </Button>
-        <Button style={styles.presetbox}>
+        <Button style={styles.presetbox} onPress={handlePress}>
           <Text style={styles.prboxtext}>Custom</Text>
         </Button>
         </HStack>
