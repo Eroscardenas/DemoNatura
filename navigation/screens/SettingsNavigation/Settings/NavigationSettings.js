@@ -11,19 +11,33 @@ import HelpSupport from "./screens/HelpSupport";
 import HistorialGraficas from "./screens/HistorialGraficas";
 import PrivacySupport from "./screens/PrivacySupport";
 import Account from "./screens/Account";
+import AddNotification from "./screens/AddNotification";
 
 const NavigationSettings = () => {
   const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator initialRouteName="Settings">
       <Stack.Screen name="Settings" component={Settings} />
-      <Stack.Screen name="Account" component={Account} />
+      <Stack.Screen
+        name="Account"
+        component={Account}
+        options={{ title: "Account Settings" }}
+      />
       <Stack.Screen name="Notifications" component={Notifications} />
       <Stack.Screen name="Apperance" component={Appearance} />
       <Stack.Screen name="AboutUs" component={AboutUs} />
-      <Stack.Screen name="HelpSupport" component={HelpSupport} />
+      <Stack.Screen
+        name="HelpSupport"
+        component={HelpSupport}
+        options={{ title: "Help and Support" }}
+      />
       <Stack.Screen name="HistorialGraficas" component={HistorialGraficas} />
-      <Stack.Screen name="PrivacySupport" component={PrivacySupport} />
+      <Stack.Screen
+        name="PrivacySupport"
+        component={PrivacySupport}
+        options={{ title: "Privacy and Security" }}
+      />
+      <Stack.Screen name="AddNotification" component={AddNotification} />
     </Stack.Navigator>
   );
 };

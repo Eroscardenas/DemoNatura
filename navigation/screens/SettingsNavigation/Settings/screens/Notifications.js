@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import {
   Center,
@@ -7,10 +7,10 @@ import {
   Icon,
   AddIcon,
   Box,
-  ScrollView,
+  Pressable,
 } from "@gluestack-ui/themed";
 
-const Notification = () => {
+const Notification = ({ navigation }) => {
   const recordatorios = [
     { hora: "10:00", titulo: "Tarea 1" },
     { hora: "11:00", titulo: "Tarea 2" },
@@ -18,80 +18,197 @@ const Notification = () => {
     { hora: "13:00", titulo: "Tarea 4" },
   ];
   return (
-    <VStack>
-      <ScrollView>
-        <HStack justifyContent="center">
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Text
-              style={{
-                fontWeight: "bold",
-                fontSize: 40,
-                color: "black",
-                paddingBottom: 40,
-              }}
-            >
-              Reminders
-            </Text>
-          </View>
-          <Box style={{ position: "absolute", right: 10, paddingTop: 15 }}>
-            <Icon as={AddIcon} size="xl" color="blue" />
+    <ScrollView>
+      <VStack>
+        <HStack justifyContent="center"></HStack>
+        <View
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            backgroundColor: "white",
+          }}
+        >
+          <Text
+            style={{
+              fontWeight: "bold",
+              color: "black",
+              paddingBottom: 40,
+              paddingTop: 10,
+              fontSize: 40,
+              backgroundColor: "white",
+              paddingRight: 10,
+            }}
+          >
+            Reminders
+          </Text>
+        </View>
+        <VStack>
+          <Box bg="white" p="$1" borderRadius={10} margin={0}>
+            <HStack justifyContent="left">
+              <View style={{ justifyContent: "left", alignItems: "left" }}>
+                <Text
+                  style={{
+                    fontWeight: "bold-italic",
+                    fontSize: 25,
+                    color: "green",
+                    paddingBottom: 20,
+                    marginLeft: 10,
+                    backgroundColor: "white",
+                  }}
+                >
+                  Today
+                </Text>
+              </View>
+            </HStack>
           </Box>
-        </HStack>
-        <VStack>
-          <HStack justifyContent="left">
-            <View style={{ justifyContent: "left", alignItems: "left" }}>
-              <Text
-                style={{
-                  fontWeight: "bold-italic",
-                  fontSize: 25,
-                  color: "green",
-                  paddingBottom: 20,
-                  marginLeft: 10,
-                }}
-              >
-                Today
-              </Text>
-            </View>
-          </HStack>
         </VStack>
-        <VStack>
-          {recordatorios.map((recordatorio) => (
-            <HStack
-              justifyContent="space-between"
-              marginTop={10}
-              marginLeft={10}
-            >
+        <Box
+          style={{
+            position: "absolute",
+            right: 10,
+            paddingTop: 25,
+            paddingLeft: 10,
+            paddingRight: 0.5,
+          }}
+        >
+          <Pressable onPress={() => navigation.navigate("AddNotification")}>
+            <Icon as={AddIcon} size="xl" color="blue" />
+          </Pressable>
+        </Box>
+        {recordatorios.map((recordatorio) => (
+          <Box bg="white" p="$1" borderRadius={10} margin={0}>
+            <HStack justifyContent="space-between">
               <Box
                 style={{
-                  height: 80,
-                  width: 120,
+                  height: 50,
+                  width: 100,
                   backgroundColor: "lightgreen",
                   padding: 10,
-                  paddingBottom: 15,
-                  borderBlockColor: "black",
-                  borderBlockWidth: 2,
-                  borderRadius: 15,
+                  borderRightWidth: 1,
+                  borderRadius: 10,
                 }}
               >
                 <Text
                   style={{
                     fontWeight: "bold",
-                    fontSize: 20,
+                    fontSize: 18,
                     color: "black",
-                    paddingTop: 20,
-                    paddingBottom: 10,
+                    paddingBottom: 20,
+                    paddingTop: 5,
                     paddingLeft: 10,
                   }}
                 >
                   {recordatorio.hora}
                 </Text>
               </Box>
-              <Text>{recordatorio.titulo}</Text>
+              <Box g="white" p="$1" borderRadius={10} margin={0}>
+                <Box
+                  style={{
+                    height: 50,
+                    width: 250,
+                    backgroundColor: "#3c3c3c",
+                    padding: 10,
+                    borderRightWidth: 1,
+                    borderRadius: 10,
+                    paddingLeft: 80,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: 18,
+                      color: "black",
+                      paddingBottom: 20,
+                      paddingTop: 5,
+                      paddingLeft: 10,
+                      paddingRight: 45,
+                    }}
+                  >
+                    {recordatorio.titulo}
+                  </Text>
+                </Box>
+              </Box>
             </HStack>
-          ))}
+          </Box>
+        ))}
+        <VStack>
+          <Box bg="white" p="$1" borderRadius={10} margin={0}>
+            <HStack justifyContent="left">
+              <View style={{ justifyContent: "left", alignItems: "left" }}>
+                <Text
+                  style={{
+                    fontWeight: "bold-italic",
+                    fontSize: 25,
+                    color: "green",
+                    paddingBottom: 20,
+                    marginLeft: 10,
+                    backgroundColor: "white",
+                  }}
+                >
+                  May 18th
+                </Text>
+              </View>
+            </HStack>
+          </Box>
         </VStack>
-      </ScrollView>
-    </VStack>
+        {recordatorios.map((recordatorio) => (
+          <Box bg="white" p="$1" borderRadius={10} margin={0}>
+            <HStack justifyContent="space-between">
+              <Box
+                style={{
+                  height: 50,
+                  width: 100,
+                  backgroundColor: "lightgreen",
+                  padding: 10,
+                  borderRightWidth: 1,
+                  borderRadius: 10,
+                }}
+              >
+                <Text
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: 18,
+                    color: "black",
+                    paddingBottom: 20,
+                    paddingTop: 5,
+                    paddingLeft: 10,
+                  }}
+                >
+                  {recordatorio.hora}
+                </Text>
+              </Box>
+              <Box g="white" p="$1" borderRadius={10} margin={0}>
+                <Box
+                  style={{
+                    height: 50,
+                    width: 250,
+                    backgroundColor: "grey",
+                    padding: 10,
+                    borderRightWidth: 1,
+                    borderRadius: 10,
+                    paddingLeft: 80,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: 18,
+                      color: "black",
+                      paddingBottom: 20,
+                      paddingTop: 5,
+                      paddingLeft: 10,
+                      paddingRight: 45,
+                    }}
+                  >
+                    {recordatorio.titulo}
+                  </Text>
+                </Box>
+              </Box>
+            </HStack>
+          </Box>
+        ))}
+      </VStack>
+    </ScrollView>
   );
 };
 
