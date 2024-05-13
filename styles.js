@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
   pressnest2: {
     fontSize: 15,
-    color: "black",
+    color: "#000",
     textAlign: "center",
     marginTop: 10,
   },
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     height: 30,
     margin: 10,
     borderBottomWidth: 1,
-    borderBottomColor: "black",
+    borderBottomColor: "#000",
   },
   image: {
     width: 200,
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
   subtitle: {
     fontSize: 15,
-    fontWeight: "bold",
+    fontWeight: 800,
     textAlignVertical: "center",
   },
   playlist: {
@@ -117,15 +117,15 @@ const styles = StyleSheet.create({
     marginRight: 20,
     paddingBottom: 10,
     borderBottomWidth: 1,
-    borderBottomColor: "black",
+    borderBottomColor: "#000",
   },
   graphtlt: {
-    textAlign:'center',
-    fontWeight:'bold',
-    fontSize:20,
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 20,
   },
   presetbox: {
-    backgroundColor: "green",
+    backgroundColor: "#008000",
     margin: 10,
     width: 165,
     height: 200,
@@ -135,9 +135,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
     textAlign: "center",
-    color: "white",
+    color: "#fff",
   },
-  }
-);
+});
 
 export default styles;
